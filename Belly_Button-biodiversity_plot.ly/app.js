@@ -23,7 +23,7 @@ function buildMetadata(sample) {
     
     // @TODO: Build a Bubble Chart using the sample data
     
-    // @TODO: Build a Pie Chart
+    // @TODO: Build a Horizontal Bar Graph
     // HINT: You will need to use slice() to grab the top 10 sample_values,
     // otu_ids, and labels (10 each).
     
@@ -59,13 +59,14 @@ function buildMetadata(sample) {
 
       Plotly.plot('bubble', bubbleData, bubbleLayout);
 
-      // Building Pie Chart
+      // Building Bar Graph
       var pieData = [{
         values: sample_values.slice(0,10),
         labels: otu_ids.slice(0,10),
         hovertext: otu_labels.slice(0,10,),
         hoverinfo: 'hovertext',
-        type: 'pie'
+        type: 'bar'
+        orientation: "h"
       }];
 
       var pieLayout = {
